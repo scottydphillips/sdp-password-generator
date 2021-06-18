@@ -22,23 +22,27 @@ function writePassword() {
     if (numChar == NaN) {
       return;
     }
+    //Adds lowercase characters
   var lowerCasePass = window.confirm("Would you like to include lower case letters?");
     if (lowerCasePass === true) {
       options = options.concat(lowerCase);
     }
+    //Adds uppercase characters
   var upperCasePass = window.confirm("Would you like to include upper case letters?");
     if (upperCasePass === true) {
       options = options.concat(upperCase);
     }
+    //Adds numeric characters
   var numericPass = window.confirm("Would you like to include numbers?");
     if (numericPass === true) {
       options = options.concat(numerics);
     }
+    //Adds special characters
   var specialPass = window.confirm("Would you like to include special characters?")
     if (specialPass === true) {
       options = options.concat(specials);
     }
-
+//Character randomizer
   var index = function() {
     finishedPassword = finishedPassword.concat(options[Math.floor(Math.random() * options.length)]);
   }
@@ -46,6 +50,7 @@ function writePassword() {
   for (i=0; i <= (numChar-1); i++) {
     index();
   }
+  //Final Input
   passwordText.value = finishedPassword;
 } 
 
